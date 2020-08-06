@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       resources :posts 
       resources :comments 
       resources :challenges 
-      resources :mychallenges 
+      resources :my_challenges 
       resources :notes 
     end 
   end 

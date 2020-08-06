@@ -1,3 +1,3 @@
 class Note < ApplicationRecord
-    belongs_to :mychallenge 
+    belongs_to :my_challenge 
 end
