@@ -23,9 +23,9 @@ numberArray = [1, 21, 35, 22, 24]
 
 
 #Users
-User.create(username: (Faker::TvShows::SouthPark.character.gsub(/\s+/, "") + "#{numberArray.sample}"), password_digest: 'flatiron1', bio: 'Just a man who loves react :)', img_url: "")
-User.create(username: (Faker::TvShows::SouthPark.character.gsub(/\s+/, "") + "#{numberArray.sample}"), password_digest: 'flatiron2', bio: 'second guy to sign up for pear!', img_url: "")
-User.create(username: (Faker::TvShows::SouthPark.character.gsub(/\s+/, "") + "#{numberArray.sample}"), password_digest: 'flatiron3', bio: 'always late to the party :(', img_url: "")
+User.create(username: (Faker::TvShows::SouthPark.character.gsub(/\s+/, "") + "#{numberArray.sample}"), password: 'flatiron1', bio: 'Just a man who loves react :)', img_url: "")
+User.create(username: (Faker::TvShows::SouthPark.character.gsub(/\s+/, "") + "#{numberArray.sample}"), password: 'flatiron2', bio: 'second guy to sign up for pear!', img_url: "")
+User.create(username: (Faker::TvShows::SouthPark.character.gsub(/\s+/, "") + "#{numberArray.sample}"), password: 'flatiron3', bio: 'always late to the party :(', img_url: "")
 
 #Post
 10.times do 
