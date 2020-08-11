@@ -18,24 +18,24 @@ class Api::V1::UsersController < ApplicationController
             # }
     end 
 
-    def create 
-    #    user = User.new(
-    #        username: params[:username], 
-    #        password: params[:password]
-    #     )
-    #     if user.save 
-    #         render json: user
-    #         # :include => {
-    #         #     :posts => { :include => :comments},
-    #         #     :my_challenges => { :include => :challenge }
-    #         # }
-    #     else 
-    #         render json: {errors: user.errors.full_messages}
+    # def create 
+    # #    user = User.new(
+    # #        username: params[:username], 
+    # #        password: params[:password]
+    # #     )
+    # #     if user.save 
+    # #         render json: user
+    # #         # :include => {
+    # #         #     :posts => { :include => :comments},
+    # #         #     :my_challenges => { :include => :challenge }
+    # #         # }
+    # #     else 
+    # #         render json: {errors: user.errors.full_messages}
     #     end 
     def create
         user = User.new(
           username: params[:username],
-          password: params[:password],
+          password: params[:password]
         )
     
         if user.save
@@ -45,7 +45,6 @@ class Api::V1::UsersController < ApplicationController
           render json: {errors: user.errors.full_messages}
         end
     
-      end
     end 
 
     def update 
