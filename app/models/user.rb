@@ -4,6 +4,9 @@ class User < ApplicationRecord
     has_many :my_challenges
     has_many :challenges, through: :my_challenges 
     has_many :notes, through: :my_challenges 
+
+    #Auth
+    validates :username, uniqueness: true
     has_secure_password 
     
     def say_hello 
