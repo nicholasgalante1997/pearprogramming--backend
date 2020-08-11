@@ -19,19 +19,33 @@ class Api::V1::UsersController < ApplicationController
     end 
 
     def create 
-       user = User.new(
-           username: params[:username], 
-           password: params[:password]
+    #    user = User.new(
+    #        username: params[:username], 
+    #        password: params[:password]
+    #     )
+    #     if user.save 
+    #         render json: user
+    #         # :include => {
+    #         #     :posts => { :include => :comments},
+    #         #     :my_challenges => { :include => :challenge }
+    #         # }
+    #     else 
+    #         render json: {errors: user.errors.full_messages}
+    #     end 
+    def create
+        user = User.new(
+          username: params[:username],
+          password: params[:password],
         )
-        if user.save 
-            render json: user
-            # :include => {
-            #     :posts => { :include => :comments},
-            #     :my_challenges => { :include => :challenge }
-            # }
-        else 
-            render json: {errors: user.errors.full_messages}
-        end 
+    
+        if user.save
+          token = encode_token(user.id)
+          render json: {user: user, token: token}
+        else
+          render json: {errors: user.errors.full_messages}
+        end
+    
+      end
     end 
 
     def update 
