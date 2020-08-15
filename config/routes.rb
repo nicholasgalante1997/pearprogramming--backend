@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :challenges 
       resources :my_challenges 
       resources :notes 
+      resources :follows 
 
       post "/signup", to: "users#create"
       post "/login", to: "auth#login"
