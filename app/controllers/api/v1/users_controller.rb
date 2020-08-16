@@ -35,7 +35,10 @@ class Api::V1::UsersController < ApplicationController
     def create
         user = User.new(
           username: params[:username],
-          password: params[:password]
+          password: params[:password],
+          bio: params[:bio],
+          img_url: params[:img_url],
+          programming_preferences: params[:programming_preferences]
         )
     
         if user.save
